@@ -30,7 +30,7 @@
         <p>Welcome to the ultimate Spotify playlist creation experience, where music meets magic! <br>
             Create your perfect playlist effortlessly and let the rhythm of your life play on.</p>
         
-            <a href="https://accounts.spotify.com/authorize?client_id=071e87f9bc66436889c57d3af513e1fb&response_type=code&redirect_uri=http://127.0.0.1:5000/callback&scope=playlist-modify-private%20playlist-modify-public" id="spotify-auth-link">
+            <a href="{{ url_for('authorize_spotify') }}" id="spotify-auth-link">
                 <button>Authorize your Spotify</button>
             </a>
             
