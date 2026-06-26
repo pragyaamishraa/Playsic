@@ -1,5 +1,6 @@
 * {
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 body {
@@ -7,8 +8,9 @@ body {
     padding: 0;
     background-image: url('/static/background.png');
     background-size: cover;
+    background-position: center;
     font-family: 'Gotham', sans-serif;
-    color: white; 
+    color: white;
 }
 
 .navbar {
@@ -21,6 +23,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 100%;
     font-family: 'Gotham', sans-serif;
 }
 
@@ -58,10 +61,9 @@ h1 {
     text-align: center;
 }
 
-h3{
+h3 {
     color: #1db954;
     text-align: center;
-    display: contents;
     font-size: 50px;
 }
 
@@ -89,28 +91,98 @@ p {
     color: #1db954;
 }
 
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    text-align: center;
+}
+
+.team > h1,
+.team > p {
+    width: 100%;
+}
+
 .team-member {
-    display: inline-flex;
-    flex: 1;
-    margin-left: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     padding: 20px;
     background-color: rgba(7, 7, 7, 0.735);
     border-radius: 20px;
     box-shadow: 0px 0px 8px rgba(5, 5, 5, 0.856);
     font-family: 'Gotham', sans-serif;
-    width: 40%;
-    height: 310px;
+    width: 45%;
+    min-width: 280px;
 }
 
-.team-member p{
+.team-member p {
     color: #ffffff;
-    display: contents;
+    text-align: left;
 }
 
 .team-member img {
     border-radius: 15px;
-    width: 230px;
+    width: 160px;
     height: auto;
     display: block;
     margin-right: 20px;
+    flex-shrink: 0;
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+    .navbar {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .navdiv {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 15px;
+        gap: 8px;
+    }
+
+    .logo a {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+
+    li a {
+        font-size: 14px;
+        margin-right: 12px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    .team {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .team-member {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 15px;
+    }
+
+    .team-member img {
+        width: 120px;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .team-member p {
+        text-align: center;
+        font-size: 14px;
+    }
 }

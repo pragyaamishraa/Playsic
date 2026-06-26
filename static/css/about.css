@@ -14,16 +14,18 @@ body {
     padding: 0;
     background-image: url('/static/background.png');
     background-size: cover;
+    background-position: center;
     color: #fff;
 }
 
 .navbar {
     background-color: rgba(0, 0, 0, 0.45);
     height: 85px;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     font-family: 'Gotham', sans-serif;
+    padding: 0 10px;
 }
 
 .logo a {
@@ -50,7 +52,6 @@ nav li.try-hover a:hover {
     color: white;
 }
 
-
 nav a {
     color: #fff;
     font-size: 18px;
@@ -58,7 +59,7 @@ nav a {
     text-decoration: none;
 }
 
-h1{
+h1 {
     color: #1db954;
     text-align: center;
     font-size: 80px;
@@ -99,6 +100,50 @@ p {
     padding: 10px;
     width: 100%;
 }
+
 .navbar a:hover {
     color: #1db954;
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+    .navbar {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+        gap: 8px;
+    }
+
+    .logo a {
+        font-size: 20px;
+        margin: 5px 0;
+    }
+
+    nav ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    nav li {
+        margin-right: 15px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin-top: 15px;
+    }
+
+    .container {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    p {
+        font-size: 15px;
+    }
 }

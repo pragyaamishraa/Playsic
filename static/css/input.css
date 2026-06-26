@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     text-align: center;
@@ -5,19 +9,22 @@ body {
     padding: 0;
     background-image: url('/static/background.png');
     background-size: cover;
+    background-position: center;
 }
 
 h1 {
     color: #1DB954;
     font-size: 50px;
+    padding: 20px 10px 0;
 }
 
 .container {
     background-color: rgba(7, 7, 7, 0.735);
     border: 1px solid #282828;
     border-radius: 10px;
-    margin: 0 auto;
+    margin: 20px auto;
     max-width: 500px;
+    width: 90%;
     padding: 20px;
 }
 
@@ -39,71 +46,66 @@ input, select {
 }
 
 .checkbox-container {
-display: flex;
-align-items: center;
-justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .checkbox-container input[type="checkbox"] {
-order: 2; /* Change the order to place the checkbox on the right */
-margin-left: 10px; /* Adjust this value to set the desired space between checkbox and label */
-width: 20px; /* Adjust the width of the checkboxes */
+    order: 2;
+    margin-left: 10px;
+    width: 20px;
 }
 
 .checkbox-container label {
-order: 1; /* Change the order to place the label on the left */
-margin-right: 10px; /* Adjust this value to set the desired space between checkbox and label */
+    order: 1;
+    margin-right: 10px;
 }
 
-/* ... (other CSS styles) ... */
-
 .checkbox-container input[type="checkbox"] {
-    display: none; /* Hide the default checkbox */
+    display: none;
 }
 
 .checkbox-container label {
     position: relative;
-    padding-left: 25px; /* Adjust the space for the custom checkbox */
+    padding-left: 25px;
     cursor: pointer;
     color: #fff;
 }
 
-/* ... (other CSS styles) ... */
-
 .checkbox-container label::before {
     content: '';
     position: absolute;
-    top: 2px; /* Adjust the vertical alignment of the custom checkbox */
+    top: 2px;
     left: 0;
-    width: 20px; /* Adjust the width of the custom checkbox */
-    height: 20px; /* Adjust the height of the custom checkbox */
-    border: 2px solid #1DB954; /* Checkbox border color */
-    background-color: #1DB954; /* Green background color for the checkbox */
-    transition: background-color 0.3s, transform 0.3s; /* Add transition for color change */
+    width: 20px;
+    height: 20px;
+    border: 2px solid #1DB954;
+    background-color: #1DB954;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .checkbox-container label::after {
-    content: '✔'; /* Tick symbol */
+    content: '✔';
     position: absolute;
-    top: -1px; /* Adjust the vertical position of the tick symbol */
-    left: 2px; /* Adjust the horizontal position of the tick symbol */
-    color: #000; /* Black color for the tick symbol */
-    font-size: 18px; /* Adjust the size of the tick symbol */
-    opacity: 0; /* Initially hide the tick */
-    transform: scale(0); /* Initially scale down the tick */
-    transition: opacity 0.3s, transform 0.3s; /* Add transition for visibility and scaling */
+    top: -1px;
+    left: 2px;
+    color: #000;
+    font-size: 18px;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.3s, transform 0.3s;
 }
 
 .checkbox-container input[type="checkbox"]:checked + label::before {
-    background-color: #1DB954; /* Change the background color when checked */
-    border-color: #1DB954; /* Change the border color when checked */
+    background-color: #1DB954;
+    border-color: #1DB954;
 }
 
 .checkbox-container input[type="checkbox"]:checked + label::after {
-    opacity: 1; /* Show the tick */
-    transform: scale(1); /* Scale up the tick */
+    opacity: 1;
+    transform: scale(1);
 }
-
 
 .button-container {
     display: flex;
@@ -125,18 +127,18 @@ margin-right: 10px; /* Adjust this value to set the desired space between checkb
 }
 
 .button-container button#generate-default {
-    background-color: #1DB954; /* Spotify green */
+    background-color: #1DB954;
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
-    font-weight: bold; /* Apply bold font */
+    font-weight: bold;
 }
 
 .button-container button#generate-default:hover {
-    background-color: #25a953; /* Darker shade of Spotify green on hover */
+    background-color: #25a953;
 }
 
 .confirmation-message {
@@ -144,4 +146,32 @@ margin-right: 10px; /* Adjust this value to set the desired space between checkb
     margin-top: 20px;
     color: #1DB954;
     font-size: 18px;
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 28px;
+        padding: 15px 10px 0;
+    }
+
+    .container {
+        width: 92%;
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    input, select {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .button-container button {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    .checkbox-container label {
+        font-size: 14px;
+    }
 }
